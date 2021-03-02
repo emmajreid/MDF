@@ -1,5 +1,5 @@
 # Multi-Resolution Data Fusion (MDF)
-ReadMe last updated on October 8th, 2020
+ReadMe last updated on March 2nd, 2021
 
 ![](images/conops.png)
 
@@ -29,13 +29,13 @@ Note that pip install torch has issues on Windows, so you may need to acquire th
 ## Provided Code:
 
 ### Demos:
-We provide 2 demos, macedemo.py and realSR.py. In macedemo.py, we create a synthetic LR image using decimation and attempt to reconstruct the high resolution ground truth. This demo is useful as it easily allows for you to use metrics like PSNR or SSIM. In realSR.py, the input is a real LR image with no corresponding HR ground truth. The output of this demo code is a super resolution image based on the LR input.
+We provide 2 demos, macedemo.py and mdfdemo.py. In macedemo.py, we create a synthetic LR image using decimation and attempt to reconstruct the high resolution ground truth using a DnCNN prior trained on natural images. This demo is useful as it easily allows for you to use metrics like PSNR or SSIM. In mdfdemo.py, we perform the same reconstruction using a MDF prior. 
 
 ### Paper Figures:
-We provide the parameters and input images needed to replicate our paper results for MACE and MDF in the paper-params. These may be used as inputs to macedemo.py for reproducibility.
+We provide the parameters and input images needed to replicate our paper results for MACE and MDF in the paper-params. These may be used as inputs to macedemo.py for reproducibility. We additionally provide scripts for DPSR and ESRGAN that can be used to generate those images. 
 
 ### Training:
-Here we provide the exact code used for training our MDF priors. We used the DnCNN code provided at (https://github.com/cszn/KAIR) for training our priors, but the framework is meant to be flexible enough to work with any denoiser of your choice. The code in our models folder is directly from the aforementioned repository. If you run the main_train_dncnn.py file present there, you will train a DnCNN model on our 2 nm gold nanorods dataset. To change the dataset to one of your own, add the data folder to the "/trainsets/" folder and update the "train_dncnn.json" file in /options/ accordingly. For any other questions on training, please refer to the KAIR repository. 
+We provide the exact code used for training our MDF priors in the linked repository MDF-priors. We used the DnCNN code provided at (https://github.com/cszn/KAIR) for training our priors, but the framework is meant to be flexible enough to work with any denoiser of your choice. The code in our models folder is directly from the aforementioned repository. If you run the main_train_dncnn.py file present there, you will train a DnCNN model on our 2 nm gold nanorods dataset. To change the dataset to one of your own, add the data folder to the "/trainsets/" folder and update the "train_dncnn.json" file in /options/ accordingly. For any other questions on training, please refer to the KAIR repository. 
 
 ## Prior Options:
 Our prior models are neural networks using the DnCNN structure trained to remove 10% Additive White Gaussian Noise from specific microscopy materials. You may select which prior you'd like to use out of those provided in the priors folder. We currently provide prior models for E. coli, gold nanorods, and pentacene crystals. You may additionally train your own priors for use.
