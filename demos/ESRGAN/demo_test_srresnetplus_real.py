@@ -62,7 +62,7 @@ def main():
     testset_current = 'real_imgs'
     use_srganplus = True  # 'True' for SRGAN+ (x4) and 'False' for SRResNet+ (x2,x3,x4)
 
-    im = '4x.png'  # change this to generate image results
+    im = 'LR4xgoldnano.png'  # change this to generate image results
 
     noise_level_model = noise_level_img  # noise level of model
 

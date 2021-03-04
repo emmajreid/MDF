@@ -19,3 +19,19 @@
 21-03-02 11:26:26.235 : Iter: ---4--> 4x.png
 21-03-02 11:26:26.438 : Iter: ---5--> 4x.png
 21-03-02 11:26:26.662 : saving: sf = 4, 4x_x4.png.
+21-03-04 12:46:05.185 : Model path DPSR_models/DPSRx4.pth. Testing...
+21-03-04 12:46:05.210 : testsets/real_imgs/LR
+21-03-04 12:46:05.939 : Iter: ---1--> LRgoldnano.png
+21-03-04 12:46:07.011 : Iter: ---2--> LRgoldnano.png
+21-03-04 12:46:07.984 : Iter: ---3--> LRgoldnano.png
+21-03-04 12:46:08.827 : Iter: ---4--> LRgoldnano.png
+21-03-04 12:46:09.649 : Iter: ---5--> LRgoldnano.png
+21-03-04 12:46:10.513 : saving: sf = 4, LRgoldnano_x4.png.
+21-03-04 12:47:50.651 : Model path DPSR_models/DPSRx4.pth. Testing...
+21-03-04 12:47:50.675 : testsets/real_imgs/LR
+21-03-04 12:47:50.791 : Iter: ---1--> LRgoldnano.png
+21-03-04 12:47:51.926 : Iter: ---2--> LRgoldnano.png
+21-03-04 12:47:52.814 : Iter: ---3--> LRgoldnano.png
+21-03-04 12:47:53.677 : Iter: ---4--> LRgoldnano.png
+21-03-04 12:47:54.555 : Iter: ---5--> LRgoldnano.png
+21-03-04 12:47:55.474 : saving: sf = 4, LRgoldnano_x4.png.
