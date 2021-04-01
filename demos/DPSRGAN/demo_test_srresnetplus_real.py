@@ -57,12 +57,12 @@ def main():
     # ================================================
 
     sf = 4  # from 2, 3 and 4
-    noise_level_img = 0./255.  # noise level of low-quality image
+    noise_level_img = 0.0/255  # noise level of low-quality image
     testsets = 'testsets'
     testset_current = 'real_imgs'
     use_srganplus = True  # 'True' for SRGAN+ (x4) and 'False' for SRResNet+ (x2,x3,x4)
 
-    im = 'LR4xgoldnano.png'  # change this to generate image results
+    im = 'nanotestLR.png'  # change this to generate image results
 
     noise_level_model = noise_level_img  # noise level of model
 

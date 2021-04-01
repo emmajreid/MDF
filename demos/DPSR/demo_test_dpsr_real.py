@@ -60,11 +60,11 @@ def main():
     sf = 4
     show_img = True
     #noise_level_img = 8./255.
-    noise_level_img = 0.05*255/255.
+    noise_level_img = 10.0/255.
     testsets = 'testsets'
     testset_current = 'real_imgs'
 
-    im = 'LR4xgoldnano.png'  # change this for the image you'd like to reconstruct
+    im = 'nanotestLR.png'  # change this for the image you'd like to reconstruct
 
     use_srganplus = False
     if use_srganplus and sf == 4:
