@@ -60,7 +60,7 @@ def main():
     sf = 4
     show_img = True
     #noise_level_img = 8./255.
-    noise_level_img = 10.0/255.
+    noise_level_img = 0/255.
     testsets = 'testsets'
     testset_current = 'real_imgs'
 

@@ -65,3 +65,13 @@
 21-04-01 11:20:07.530 : Iter: ---2--> nanotestLR.png
 21-04-01 11:20:09.855 : Iter: ---3--> nanotestLR.png
 21-04-01 11:20:12.245 : Iter: ---4--> nanotestLR.png
+21-04-01 11:33:02.286 : Model path DPSR_models/DPSRx4.pth. Testing...
+21-04-01 11:33:02.308 : testsets/real_imgs/LR
+21-04-01 11:33:02.473 : Iter: ---1--> nanotestLR.png
+21-04-01 11:33:03.393 : Iter: ---2--> nanotestLR.png
+21-04-01 11:33:04.250 : Iter: ---3--> nanotestLR.png
+21-04-01 11:33:05.173 : Iter: ---4--> nanotestLR.png
+21-04-01 11:33:05.998 : Iter: ---5--> nanotestLR.png
+21-04-01 11:33:06.863 : saving: sf = 4, nanotestLR_x4.png.
+21-04-01 11:33:27.119 : Model path DPSR_models/DPSRx4.pth. Testing...
+21-04-01 11:33:27.136 : testsets/real_imgs/LR
