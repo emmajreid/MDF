@@ -1,10 +1,10 @@
 # Multi-Resolution Data Fusion (MDF)
-ReadMe last updated on March 2nd, 2021
+ReadMe last updated on May 12th, 2021
 
 ![](images/conops.png)
 
 Contributors:
-Emma J. Reid (Purdue University), Charles A. Bouman (Purdue University), Gregery T. Buzzard (Purdue University), Lawrence F. Drummy (AFRL-RXAS), Cheri M. Hampton (AFRL-RXAS),  and Asif Mehmood (AFRL-RYAT)
+Emma J. Reid (Purdue University), Charles A. Bouman (Purdue University), Gregery T. Buzzard (Purdue University), and Lawrence F. Drummy (AFRL-RXAS)
 
 ## Overview:
 Applications in materials and biological imaging are currently limited by their ability to collect large areas of high resolution data in practical amounts of time. One possible solution to this problem is to collect low-resolution data and apply a super-resolution interpolation algorithm to produce a high-resolution image.  However, state-of-the-art super-resolution algorithms are typically designed for natural images, require aligned pairing of high and low resolution training data for optimal performance, and do not directly incorporate a data-fidelity mechanism.
