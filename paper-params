@@ -1,4 +1,4 @@
-### This file contains the parameters to change for each case in macedemo.py
+### This file contains the parameters to change for each case in macedemo.py and mdfdemo.py
 
 GOLD NANORODS:
 
@@ -16,12 +16,6 @@ GOLD NANORODS:
 	--hrname 'nanotest.png'
 	--forwards [0]
 
-# For 16x MACE case on Gold Nanorods, change the following defaults:
-	--SRval 16
-	--iterstop 200
-	--model_name 'dncnn_25.pth'
-	--hrname 'nanotest.png'
-	--forwards [0]
 
 # For 4x MDF case on Gold Nanorods, change the following defaults:
 	--SRval 4
@@ -36,14 +30,6 @@ GOLD NANORODS:
 	--model_name 'nano.pth'
 	--hrname 'nanotest.png'
 	--forwards [1]
-
-# For 16x MDF case on Gold Nanorods, change the following defaults:
-	--SRval 16
-	--iterstop 200
-	--model_name 'nano.pth'
-	--hrname 'nanotest.png'
-	--forwards [1]
-
 
 PENTACENE:
 # For 4x MACE case on Pentacene Crystals, change the following defaults:
@@ -75,3 +61,9 @@ E COLI:
 	--hrname 'ecolitest.png'
 	--forwards [1]
 
+REAL SR:
+# For real SR with MACE and MDF, change the following defaults:
+	--mu 0.2
+	--sigy = 0.1
+	--lrname = 'nanotestLR.png' or 'pentacenelr.png'
+	--model_name = 'srnano.pth' or 'pent.pth'
