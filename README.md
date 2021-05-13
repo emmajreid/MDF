@@ -16,7 +16,7 @@ Our datasets are extracted from microscopy images of pentacene crystals, gold na
 ## Dependencies:
 * Python 3.7
 
-Run the following code to set up a virtual environment with our dependencies: 
+Navigate to the MDF-master folder and run the following code to set up a virtual environment with our dependencies: 
 
   ```
   conda create -n envname python=3.7
