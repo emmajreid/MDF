@@ -1,7 +1,7 @@
 # Multi-Resolution Data Fusion (MDF)
 ReadMe last updated on May 12th, 2021
 
-![](images/conops.png)
+![](images/updatedconops.png)
 
 Contributors:
 Emma J. Reid (Purdue University), Charles A. Bouman (Purdue University), Gregery T. Buzzard (Purdue University), and Lawrence F. Drummy (AFRL-RXAS)
