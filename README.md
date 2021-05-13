@@ -1,10 +1,10 @@
 # Multi-Resolution Data Fusion (MDF)
-ReadMe last updated on March 2nd, 2021
+ReadMe last updated on May 12th, 2021
 
 ![](images/conops.png)
 
 Contributors:
-Emma J. Reid (Purdue University), Charles A. Bouman (Purdue University), Gregery T. Buzzard (Purdue University), Lawrence F. Drummy (AFRL-RXAS), Cheri M. Hampton (AFRL-RXAS),  and Asif Mehmood (AFRL-RYAT)
+Emma J. Reid (Purdue University), Charles A. Bouman (Purdue University), Gregery T. Buzzard (Purdue University), and Lawrence F. Drummy (AFRL-RXAS)
 
 ## Overview:
 Applications in materials and biological imaging are currently limited by their ability to collect large areas of high resolution data in practical amounts of time. One possible solution to this problem is to collect low-resolution data and apply a super-resolution interpolation algorithm to produce a high-resolution image.  However, state-of-the-art super-resolution algorithms are typically designed for natural images, require aligned pairing of high and low resolution training data for optimal performance, and do not directly incorporate a data-fidelity mechanism.
@@ -32,7 +32,7 @@ Note that pip install torch has issues on Windows, so you may need to acquire th
 We provide 2 demos, macedemo.py and mdfdemo.py. In macedemo.py, we create a synthetic LR image using decimation and attempt to reconstruct the high resolution ground truth using a DnCNN prior trained on natural images. This demo is useful as it easily allows for you to use metrics like PSNR or SSIM. In mdfdemo.py, we perform the same reconstruction using a MDF prior. 
 
 ### Paper Figures:
-We provide the parameters and input images needed to replicate our paper results for MACE and MDF in the paper-params. These may be used as inputs to macedemo.py for reproducibility. We additionally provide scripts for DPSR and ESRGAN that can be used to generate those images. 
+We provide the parameters and input images needed to replicate our paper results for MACE and MDF in the paper-params. These may be used as inputs to macedemo.py for reproducibility. We additionally provide scripts for DPSR and DPSRGAN that can be used to generate those images using code from (https://github.com/cszn/KAIR). 
 
 ### Training:
 We provide the exact code used for training our MDF priors in the training folder. We used the DnCNN code provided at (https://github.com/cszn/KAIR) for training our priors, but the framework is meant to be flexible enough to work with any denoiser of your choice. The code in our models folder is directly from the aforementioned repository. If you run the main_train_dncnn.py file present there, you will train a DnCNN model on our 2 nm gold nanorods dataset. To change the dataset to one of your own, add the data folder to the "/trainsets/" folder and update the "train_dncnn_*.json" file in /options/ accordingly. For any other questions on training, please refer to the KAIR repository. 
