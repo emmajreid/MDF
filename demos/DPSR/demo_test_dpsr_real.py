@@ -184,7 +184,9 @@ def main():
     # --------------------------------
     # (9) img_E
     # --------------------------------
-    img_E = util.single2uint(z[:h*sf, :w*sf])  # np.uint8((z[:h*sf, :w*sf] * 255.0).round())
+    #img_E = util.single2uint(z[:h*sf, :w*sf])  # np.uint8((z[:h*sf, :w*sf] * 255.0).round())
+    img_E = np.uint8((z[:h*sf, :w*sf] * 255.0).round())
+
 
     logger.info('saving: sf = {}, {}.'.format(sf, img_name+'_x{}'.format(sf)+ext))
     util.imsave(img_E, os.path.join(E_folder, img_name+'_x{}'.format(sf)+ext))

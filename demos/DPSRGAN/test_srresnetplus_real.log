@@ -69,3 +69,9 @@
 21-05-13 14:16:12.766 : Model path DPSR_models/DPSRGANx4.pth. Testing...
 21-05-13 14:16:12.784 : testsets/real_imgs/LR
 21-05-13 14:16:13.764 : saving: sf = 4, nanotestLR_x4.png.
+21-06-15 11:51:14.304 : Model path DPSR_models/DPSRGANx4.pth. Testing...
+21-06-15 11:51:14.306 : testsets/real_imgs/LR
+21-06-15 11:51:15.310 : saving: sf = 4, nanotestLR_x4.png.
+21-06-18 11:01:02.380 : Model path DPSR_models/DPSRGANx4.pth. Testing...
+21-06-18 11:01:02.381 : testsets/real_imgs/LR
+21-06-18 11:01:03.488 : saving: sf = 4, nanotestLR_x4.png.

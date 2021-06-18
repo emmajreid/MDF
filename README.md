@@ -1,5 +1,5 @@
 # Multi-Resolution Data Fusion (MDF)
-ReadMe last updated on May 12th, 2021
+ReadMe last updated on June 15th, 2021
 
 ![](images/updatedconops.png)
 
@@ -19,17 +19,29 @@ Our datasets are extracted from microscopy images of pentacene crystals, gold na
 Navigate to the MDF-master folder and run the following code to set up a virtual environment with our dependencies: 
 
   ```
-  conda create -n envname python=3.7
-  conda activate envname
+  conda create -n MDFenv python=3.7
+  conda activate MDFenv
   pip install -r requirements.txt
   ```
 
-Note that pip install torch has issues on Windows, so you may need to acquire this through other means.
+Note that pip install torch has issues on Windows, so you may need to acquire this through other means. In this case, you may also need to omit torch from the requirements.txt file. Additionally, you may need to use 'source activate MDFenv' rather than 'conda activate MDFenv' depending on your conda version.
 
 ## Provided Code:
 
 ### Demos:
-We provide 2 demos, macedemo.py and mdfdemo.py. In macedemo.py, we create a synthetic LR image using decimation and attempt to reconstruct the high resolution ground truth using a DnCNN prior trained on natural images. This demo is useful as it easily allows for you to use metrics like PSNR or SSIM. In mdfdemo.py, we perform the same reconstruction using a MDF prior. 
+We provide a number of demos that correspond to the results in our paper. In macedemo.py, we create a synthetic LR image using decimation and attempt to reconstruct the high resolution ground truth using a DnCNN prior trained on natural images. This demo is useful as it easily allows for you to use metrics like PSNR or SSIM. In mdfdemo.py, we perform the same reconstruction using a MDF prior. In realSR.py, we perform super resolution without a ground truth image. 
+
+As it stands, the demos can be run without any changing of parameters. One can change the defaults manually in the python scripts or in the terminal by running something like 
+
+  ```
+  conda activate MDFenv
+  python3 realSR.py --iterstop 20 --SRval 8
+  ```
+
+It is imperative for the MDF demos that you change the prior models when you change the image modality (nanorods, pentacene, E. coli).
+
+### MACE:
+In maceutils.py, we provide an implementation of the MACE framework from [3](https://arxiv.org/abs/1906.06601) that can be used modularly in your own code. You may adapt the code for your forward model and prior model.
 
 ### Paper Figures:
 We provide the parameters and input images needed to replicate our paper results for MACE and MDF in the paper-params. These may be used as inputs to macedemo.py for reproducibility. We additionally provide scripts for DPSR and DPSRGAN that can be used to generate those images using code from (https://github.com/cszn/KAIR). A preprint of our paper is available [here](https://arxiv.org/abs/2105.06533).
@@ -43,7 +55,7 @@ Our prior models are neural networks using the DnCNN structure trained to remove
 ### Code References:
 [1](https://arxiv.org/abs/1612.00874) S. Sreehari et al. "Multi-resolution Data Fusion for Super-Resolution Electron Microscopy". In: Computer Vision and Pattern Recognition (2017)
 
-[2](https://arxiv.org/abs/1705.08983) G. Buzzard et al. “Plug-and-Play Unplugged: Optimization-Free  Reconstruction  Using  Consensus  Equilibrium”.In:SIAM  Journal  on  Imaging  Sciences11.3  (2018),pp.  2001–2020
+[2](https://arxiv.org/abs/1705.08983) G. Buzzard et al. “Plug-and-Play Unplugged: Optimization-Free  Reconstruction  Using  Consensus  Equilibrium”. In:SIAM  Journal  on  Imaging  Sciences11.3  (2018),pp.  2001–2020
 
 [3](https://arxiv.org/abs/1906.06601) Soumendu Majee et al. “4D X-Ray CT Reconstructionusing  Multi-Slice  Fusion”. In: International Conference on Computational Photography (2019)
 
