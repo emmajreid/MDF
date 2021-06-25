@@ -29,16 +29,16 @@ Note that pip install torch has issues on Windows, so you may need to acquire th
 ## Provided Code:
 
 ### Demos:
-We provide a number of demos that correspond to the results in our paper. In macedemo.py, we create a synthetic LR image using decimation and attempt to reconstruct the high resolution ground truth using a DnCNN prior trained on natural images. This demo is useful as it easily allows for you to use metrics like PSNR or SSIM. In mdfdemo.py, we perform the same reconstruction using a MDF prior. In realSR.py, we perform super resolution without a ground truth image. 
+We provide a demo of our MACE, MDF, and SR code in demo.py. Which demo you're running is effectively changed by updating the 'prior_mode' and 'SRmode' defaults. When SRmode is False, we create a synthetic LR image using decimation and attempt to reconstruct the high resolution ground truth using a DnCNN prior trained on natural images. This demo is useful as it easily allows for you to use metrics like PSNR or SSIM. This reconstruction can be performed using MACE or MDF priors. When SRmode is True, we perform super resolution without a ground truth image. 
 
-As it stands, the demos can be run without any changing of parameters. One can change the defaults manually in the python scripts or in the terminal by running something like 
+As it stands, the demos can be run without any changing of parameters once you navigate to its folder. One can change the defaults manually in the python scripts or in the terminal by running something like 
 
   ```
   conda activate MDFenv
   python3 realSR.py --iterstop 20 --SRval 8
   ```
 
-It is imperative for the MDF demos that you change the prior models when you change the image modality (nanorods, pentacene, E. coli).
+For simplicity in the demo, we control which priors are loaded using conditional statements. To load your own prior, put your model in the 'priors' folder and update the model name loaded.
 
 ### MACE:
 In maceutils.py, we provide an implementation of the MACE framework from [3](https://arxiv.org/abs/1906.06601) that can be used modularly in your own code. You may adapt the code for your forward model and prior model.

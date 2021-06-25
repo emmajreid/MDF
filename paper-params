@@ -1,69 +1,73 @@
-### This file contains the parameters to change for each case in macedemo.py and mdfdemo.py
+### This file contains the parameters to change for each case in demo.py
 
 GOLD NANORODS:
 
 # For 4x MACE case on Gold Nanorods, change the following defaults:
 	--SRval 4
 	--iterstop 200
-	--model_name 'dncnn_25.pth'
-	--hrname 'nanotest.png'
-	--forwards [0]
+	--prior_mode 'MACE'
+	--datatype 'nano'
+	--SRmode False
 
 # For 8x MACE case on Gold Nanorods, change the following defaults:
 	--SRval 8
 	--iterstop 200
-	--model_name 'dncnn_25.pth'
-	--hrname 'nanotest.png'
-	--forwards [0]
+	--prior_mode 'MACE'
+	--datatype 'nano'
+	--SRmode False
 
 
 # For 4x MDF case on Gold Nanorods, change the following defaults:
 	--SRval 4
 	--iterstop 200
-	--model_name 'nano.pth'
-	--hrname 'nanotest.png'
-	--forwards [1]
+	--prior_mode 'MDF'
+	--datatype 'nano'
+	--SRmode False
 
 # For 8x MDF case on Gold Nanorods, change the following defaults:
 	--SRval 8
 	--iterstop 200
-	--model_name 'nano.pth'
-	--hrname 'nanotest.png'
-	--forwards [1]
+	--prior_mode 'MDF'
+	--datatype 'nano'
+	--SRmode False
+
 
 PENTACENE:
 # For 4x MACE case on Pentacene Crystals, change the following defaults:
 	--SRval 4
 	--iterstop 200
-	--model_name 'dncnn_25.pth'
-	--hrname 'pentacenetest.png'
-	--forwards [0]
+	--prior_mode 'MACE'
+	--datatype 'pent'
+	--SRmode False
+
 
 # For 4x MDF case on Pentacene Crystals, change the following defaults:
 	--SRval 4
 	--iterstop 200
-	--model_name 'pent.pth'
-	--hrname 'pentacenetest.png'
-	--forwards [1]
+	--prior_mode 'MDF'
+	--datatype 'pent'
+	--SRmode False
 
 E COLI:
-# For 4x MACE case on e. Coli, change the following defaults:
+# For 4x MACE case on E. coli, change the following defaults:
 	--SRval 4
 	--iterstop 200
-	--model_name 'dncnn_25.pth'
-	--hrname 'ecolitest.png'
-	--forwards [0]
+	--prior_mode 'MACE'
+	--datatype 'ecoli'
+	--SRmode False
 
-# For 4x MDF case on Pentacene Crystals, change the following defaults:
+
+# For 4x MDF case on E. coli, change the following defaults:
 	--SRval 4
 	--iterstop 200
-	--model_name 'ecoli.pth'
-	--hrname 'ecolitest.png'
-	--forwards [1]
+	--prior_mode 'MDF'
+	--datatype 'ecoli'
+	--SRmode False
 
 REAL SR:
 # For real SR with MACE and MDF, change the following defaults:
 	--mu 0.2
 	--sigy = 0.1
-	--lrname = 'nanotestLR.png' or 'pentacenelr.png'
-	--model_name = 'srnano.pth' or 'pent.pth'
+	--prior_mode 'MDF' or 'MACE'
+	--datatype 'nano' or 'pent'
+	--SRmode True

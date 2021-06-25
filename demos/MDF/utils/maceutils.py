@@ -6,15 +6,12 @@ Created on Fri May 10 12:01:55 2019
 @author: emmareid
 """
 # General imports
-import sys
 import os
 import numpy as np
-import argparse
 import cv2
 
 from utils import conv2d
 from utils import atranspose
-from utils import psnr
 
 import torch
 from models.network_dncnn import DnCNN as net
@@ -78,17 +75,11 @@ def mace(LR,numagents,c,args):
         W = W+2*args.rho*(Z-X)
 
      # Save metrics for this iteration to the vector. 
-        if not args.SRmode:
-            PSNR[i] = psnr.psnr(args.GT/255,G(W,numagents,args.mu)[:,0].reshape(mdim,ndim))
-
         Y=np.copy(W)
         maceerr[i]=(1/args.sign)*np.linalg.norm(G(Y,numagents,args.mu)-L(Y,Y,numagents, mdim, ndim, c, LR, args))/np.linalg.norm(G(Y,numagents,args.mu))
 
-    if not args.SRmode:
-        return G(W,numagents,args.mu)[:,0], PSNR, maceerr
-    
-    else: 
-        return G(W,numagents, args.mu)[:,0], maceerr
+
+    return G(W,numagents, args.mu)[:,0], maceerr
 
 #L takes in all of the state vectors and applies denoisers to the first k state
 #vectors and the forward model to the last state vector.
