@@ -15,9 +15,10 @@ import cv2
 from utils import conv2d
 from utils import psnr
 from utils import maceutils
+import time
 
 if __name__ == '__main__':
-    
+    start = time.time()
     '''
     Variable Definitions:
         beta: User-defined parameter for calculating \sigma^2_\lambda, our Lagrangian parameter, and c.
@@ -41,7 +42,7 @@ if __name__ == '__main__':
     parser.add_argument('--iterstop', type=int, default=20, help='Number of iterations to run')
     parser.add_argument('--sign', type=float,default=0.1, help='Noise level trained to remove')
     parser.add_argument('--sigy', type=float, default=0, help='Noise level in image')
-    parser.add_argument('--mu', type=float, default=0.5, help='Weighting factor')
+    parser.add_argument('--mu', type=float, default=0.8, help='Weighting factor')
     parser.add_argument('--rho', type=float, default=0.5, help='Convergence factor')
     
 
@@ -127,7 +128,8 @@ if __name__ == '__main__':
     cv2.imwrite(os.path.join(resultsimg_file,str(args.iterstop)+'iters-'+str(args.prior_mode)+'-'+str(args.mu)+'.noise'+str(args.sign)+'.png'),outW.reshape(LR.shape[0]*args.SRval,LR.shape[0]*args.SRval)*255)
 
     srx = cv2.imread(os.path.join(resultsimg_file,str(args.iterstop)+'iters-'+str(args.prior_mode)+'-'+str(args.mu)+'.noise'+str(args.sign)+'.png'),0)
-
+    end = time.time()
+    print(end-start)
     # Load images for metric purposes
     if not args.SRmode:
         gt = cv2.imread(os.path.join(testimg_file,args.hrname),0)

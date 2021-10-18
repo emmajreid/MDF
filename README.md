@@ -40,6 +40,8 @@ As it stands, the demos can be run without any changing of parameters once you n
 
 For simplicity in the demo, we control which priors are loaded using conditional statements. To load your own prior, put your model in the 'priors' folder and update the model name loaded.
 
+We also include the code used to generate the FRC plots, adapted slightly from [6](https://github.com/s-sajid-ali/FRC). 
+
 ### MACE:
 In maceutils.py, we provide an implementation of the MACE framework from [3](https://arxiv.org/abs/1906.06601) that can be used modularly in your own code. You may adapt the code for your forward model and prior model.
 
@@ -62,4 +64,6 @@ Our prior models are neural networks using the DnCNN structure trained to remove
 [4](https://arxiv.org/abs/1608.03981) K. Zhang et al. “Beyond a Gaussian Denoiser: Resid-ual Learning of Deep CNN for Image Denoising”. In:IEEE  Transactions  on  Image  Processing26.7  (July2017), pp. 3142–3155.
 
 [5](https://github.com/cszn/KAIR) KAIR GitHub Code Repository - used their DnCNN training code.
+
+[6](https://github.com/s-sajid-ali/FRC) FRC GitHub Code Repository - used their FRC code in mdf_frc.py.
 

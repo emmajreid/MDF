@@ -16,6 +16,7 @@ from dpsrutils import utils_image as util
 
 from dpsrmodels.network_srresnet import SRResNet
 
+import time
 
 '''
 Spyder (Python 3.6)
@@ -58,7 +59,7 @@ def main():
     # basic setting
     # ================================================
     sf = 4
-    show_img = True
+    show_img = False
     #noise_level_img = 8./255.
     noise_level_img = 0/255.
     testsets = 'testsets'
@@ -195,5 +196,7 @@ def main():
 
 
 if __name__ == '__main__':
-
+    start = time.time()
     main()
+    end = time.time()
+    print(end-start)
