@@ -48,7 +48,7 @@ if __name__ == '__main__':
 
     parser.add_argument('--model_dir', default=os.path.join('priors'), help='directory of the model')
     parser.add_argument('--prior_mode', default='MDF', help='MDF or MACE')
-    parser.add_argument('--datatype', default='nano', help="Which dataset to use. Options are pent, nano, and ecoli")
+    parser.add_argument('--datatype', default='pent', help="Which dataset to use. Options are pent, nano, and ecoli")
     parser.add_argument('--SRmode', type=bool, default=False, help="Whether running in real SR mode")
     
     # Choices for forward and prior models should be entered as arrays separated by commas
@@ -70,7 +70,7 @@ if __name__ == '__main__':
     #Conditional statements to determine prior model based on prior mode, datatype, and SR mode.
     if args.prior_mode == 'MACE':
         args.model_name = 'dncnn_25.pth'
-        args.forwards =[0]
+        #args.forwards =[0]
 
     elif (args.prior_mode =='MDF') and (args.datatype == 'pent'):
         args.model_name = 'pent.pth'
@@ -134,8 +134,9 @@ if __name__ == '__main__':
     if not args.SRmode:
         gt = cv2.imread(os.path.join(testimg_file,args.hrname),0)
         ps = psnr.psnr(gt/255,srx/255)
+        init = cv2.imread('images/results/init.png', 0)/255
         print("PSNR for Our Reconstruction: ", ps)
-    
+
     print("Path to the reconstruction is: ", resultsimg_file)
 
 
